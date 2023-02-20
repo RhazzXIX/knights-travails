@@ -1,19 +1,18 @@
+const board = (num) => {
+  // if (!num || num < 8) return;
+  const gameBoard = [];
 
-const board =  () => {
-  const gameBoard = []
-
-  let j = 0
-  while (j !== 8) {
-    for (let i = 0; i < 8; i += 1) {
-      console.log(i);
-      gameBoard.push([j,i])
+  let j = 0;
+  while (j !== num) {
+    const row = [];
+    for (let i = 0; i < num; i += 1) {
+      row.push([j, i]);
     }
-    console.log(j)
+    gameBoard.push(row);
     j += 1;
   }
-  
 
-  return gameBoard
-}
+  return gameBoard;
+};
 
-export default board
+export default board;
