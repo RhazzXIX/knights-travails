@@ -1,20 +1,35 @@
+import makeGraph from "./graphModule";
+
 const Knight = function (board) {
+  const possibleMoves = makeGraph(board);
   const chessBoard = board;
+  const movesArray = [];
+  const queueArray = [];
 
-  // const makeGraph = (board) => {
+  const getBoardGrid = (grid) => {
+    if (!grid) return
+    return chessBoard[grid[0]][grid[1]]
+  }
 
-  // }
+  const getMoves = (startGrid, endGrid) => {
 
-  // const startPosition = (row, col) => {
-  //   // clearChessBoard();
-  //   // for (let i = 0; i <= row; i += 1){
-  //   //   chessBoard[i]
-  //   // }
-  //   chessBoard[row][col] = 1;
-  //   // console.table(chessBoard);
-  // }
+  }
 
-  // return {startPosition}
+  const moves = (start, end) => {
+    const startGrid = getBoardGrid(start)
+    const endGrid = getBoardGrid(end)
+    
+    movesArray.splice(0);
+    queueArray.splice(0);
+    
+    getMoves(startGrid, endGrid)
+
+
+    console.log(startGrid,endGrid)
+  };
+
+  // console.table(possibleMoves);
+  return {moves}
 };
 
 export default Knight;
