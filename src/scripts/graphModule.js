@@ -7,13 +7,12 @@ const makeGraph = (board) => {
     const vertices = args;
     const vertex = {
       move: data,
-      adjacent: []
+      adjacent: [],
     };
-    vertices.forEach(edge => {
-      if(!edge) return;
-      vertex.adjacent.push(edge)
-    })
-    
+    vertices.forEach((edge) => {
+      if (!edge) return;
+      vertex.adjacent.push(edge);
+    });
 
     return vertex;
   };
@@ -50,21 +49,7 @@ const makeGraph = (board) => {
         getBoardValue(board, row + move1, col + move2),
         getBoardValue(board, row + move2, col - move1),
         getBoardValue(board, row + move2, col + move1)
-      )
-
-      // Graph.push(
-      //   Vertex(
-      //     getBoardValue(board, row, col),
-      //     getBoardValue(board, row - move2, col - move1),
-      //     getBoardValue(board, row - move2, col + move1),
-      //     getBoardValue(board, row - move1, col - move2),
-      //     getBoardValue(board, row - move1, col + move2),
-      //     getBoardValue(board, row + move1, col - move2),
-      //     getBoardValue(board, row + move1, col + move2),
-      //     getBoardValue(board, row + move2, col - move1),
-      //     getBoardValue(board, row + move2, col + move1)
-      //   )
-      // );
+      );
       col += 1;
       square += 1;
     }
@@ -73,7 +58,6 @@ const makeGraph = (board) => {
   };
 
   const graph = buildGraph(board);
-  console.log(graph)
 
   return graph;
 };
